@@ -9,6 +9,7 @@ Markdown files in the repository remain the human-readable policy and operating 
 - `agents/podcast-os.yaml`: first active agent record.
 - `domains.yaml`: brand, app, product, API, admin, and tenant domain map.
 - `integrations.yaml`: tool and platform integration inventory.
+- `schemas/`: JSON Schema definitions used to validate the YAML files in this folder. See [schemas/README.md](schemas/README.md).
 
 ## Rules
 
