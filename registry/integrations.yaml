@@ -1,0 +1,121 @@
+schema_version: "0.1"
+integrations:
+  codex_desktop:
+    name: Codex Desktop
+    status: active
+    role: Local repo inspection, documentation edits, code changes, validation, and Git-aware execution.
+    approval_required_for:
+      - commits
+      - pushes
+      - remote_changes
+      - dependency_installs
+      - migrations
+      - destructive_actions
+      - env_or_secret_changes
+  claude_cowork:
+    name: Claude CoWork
+    status: active_planned
+    role: Planning, synthesis, documentation, decision support, and implementation-ready prompts.
+    approval_required_for:
+      - execution_authority
+      - production_changes
+  claude_code:
+    name: Claude Code
+    status: planned
+    role: Repo-aware implementation assistant when explicitly assigned.
+    approval_required_for:
+      - code_modification
+      - commits
+      - pushes
+      - production_changes
+  hermes_agent:
+    name: Hermes Agent
+    status: planned
+    role: Orchestration, memory, routing, policy enforcement, and audit visibility.
+    approval_required_for:
+      - privileged_execution
+      - deployment_changes
+      - data_mutations
+      - secret_access
+  openclaw:
+    name: OpenClaw
+    status: planned_optional
+    role: Future execution or routing component.
+    approval_required_for:
+      - production_use
+      - credential_access
+      - privileged_execution
+  obsidian:
+    name: Obsidian
+    status: active_planned
+    role: Knowledge base, briefs, decisions, and operator context.
+    approval_required_for:
+      - storing_client_sensitive_context
+      - publishing_private_notes
+  github:
+    name: GitHub
+    status: active
+    role: Source control, repo hosting, pull requests, issues, and releases.
+    approval_required_for:
+      - commits
+      - pushes
+      - releases
+      - remote_changes
+      - force_pushes
+  cloudflare:
+    name: Cloudflare
+    status: planned_active
+    role: DNS, domain control plane, wildcard routing, edge controls.
+    approval_required_for:
+      - dns_changes
+      - wildcard_changes
+      - certificate_changes
+      - firewall_changes
+      - production_routing_changes
+  vercel:
+    name: Vercel
+    status: planned_active
+    role: Web app hosting, preview deployments, production deployments.
+    approval_required_for:
+      - deployments
+      - production_promotions
+      - environment_variable_changes
+      - project_setting_changes
+  neon:
+    name: Neon
+    status: planned_optional
+    role: Serverless Postgres for product and agent data.
+    approval_required_for:
+      - database_creation
+      - migrations
+      - data_mutations
+      - connection_string_changes
+  cloudflare_r2:
+    name: Cloudflare R2
+    status: planned_optional
+    role: Object storage for files, media, exports, and artifacts.
+    approval_required_for:
+      - bucket_creation
+      - lifecycle_policy_changes
+      - public_access_changes
+  upstash:
+    name: Upstash
+    status: planned_optional
+    role: Redis, queues, rate limits, and lightweight workflow state.
+    approval_required_for:
+      - database_creation
+      - queue_creation
+      - credential_changes
+  posthog:
+    name: PostHog
+    status: planned_optional
+    role: Product analytics, event capture, and usage visibility.
+    approval_required_for:
+      - production_tracking_changes
+      - client_data_capture
+      - analytics_key_changes
+rules:
+  - Listing an integration does not make it production-ready.
+  - Production integrations require setup verification, owner confirmation, secret placement, and approval gates.
+  - Registry files must name required credentials only by variable name, never by value.
+

@@ -1,0 +1,20 @@
+# Normalize text files in the repository while keeping working-tree line endings stable across Windows and Unix tooling.
+* text=auto
+
+# Documentation and registry files should stay LF in commits and working trees.
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+
+# Common binary assets.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+

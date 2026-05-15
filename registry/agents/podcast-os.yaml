@@ -1,0 +1,52 @@
+schema_version: "0.1"
+agent_id: podcast-os
+name: Podcast OS
+status: active_in_development
+purpose: AI Podcast Producer Agent
+local_path: "C:\\dev\\AJ DIGITAL AGENTS\\PODCAST OS"
+product_url: "https://podcastos.ajdigital.app"
+domain:
+  product_subdomain: podcastos.ajdigital.app
+  tenant_pattern: "{clientname}.podcastos.ajdigital.app"
+ownership:
+  product_code_owner: PODCAST OS workspace
+  orchestration_owner: AJ Digital Agent OS
+boundaries:
+  product_code_location: "C:\\dev\\AJ DIGITAL AGENTS\\PODCAST OS"
+  agent_os_may:
+    - reference product folder in registry and documentation
+    - document orchestration rules
+    - document approval gates
+    - document domain and tenant routing assumptions
+  agent_os_must_not:
+    - modify Podcast OS product code without explicit approval
+    - move files into or out of Podcast OS
+    - initialize or change Git inside Podcast OS
+    - read or expose secrets
+    - change deployments, domains, or environment variables without explicit approval
+approval_gates:
+  - delete
+  - rename
+  - move
+  - overwrite
+  - install_dependencies
+  - run_migrations
+  - push_to_remote
+  - change_env_variables
+  - modify_secrets
+  - modify_active_app_code
+  - change_deployment_settings
+integrations:
+  required: []
+  planned:
+    - github
+    - cloudflare
+    - vercel
+    - neon
+    - cloudflare_r2
+    - upstash
+    - posthog
+notes:
+  - Product implementation remains in the Podcast OS folder.
+  - This registry record only defines Agent OS orchestration metadata.
+

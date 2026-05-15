@@ -1,0 +1,45 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and workspace files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temporary output
+*.log
+logs/
+tmp/
+temp/
+.cache/
+
+# Dependency directories and package output
+node_modules/
+.pnpm-store/
+dist/
+build/
+coverage/
+
+# Python local artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Local automation and generated reports
+.npm-cache/
+*.local.md
+WORKSPACE_AUDIT_*.md
+

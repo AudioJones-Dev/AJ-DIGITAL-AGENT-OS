@@ -1,0 +1,54 @@
+schema_version: "0.1"
+domains:
+  brand:
+    domain: audiojones.com
+    purpose: public brand, authority, content, media, and lead generation
+    status: existing_brand_surface
+  app:
+    domain: ajdigital.app
+    purpose: apps, agents, dashboards, APIs, internal tools, and client portals
+    status: agent_application_surface
+    wildcard_subdomain: "*.ajdigital.app"
+subdomains:
+  podcast_os:
+    host: podcastos.ajdigital.app
+    purpose: Podcast OS product
+    status: active_in_development
+    agent_id: podcast-os
+  agents_dashboard:
+    host: agents.ajdigital.app
+    purpose: agent ecosystem dashboard
+    status: planned
+  api:
+    host: api.ajdigital.app
+    purpose: API layer
+    status: planned
+  admin:
+    host: admin.ajdigital.app
+    purpose: internal admin
+    status: planned
+  diagnostics:
+    host: diagnostics.ajdigital.app
+    purpose: diagnostic tooling
+    status: planned
+    agent_id: diagnostics-agent
+  hermes:
+    host: hermes.ajdigital.app
+    purpose: orchestration and control layer
+    status: planned
+    agent_id: hermes-control-plane
+tenant_patterns:
+  podcast_os:
+    pattern: "{clientname}.podcastos.ajdigital.app"
+    purpose: tenant-specific Podcast OS workspace
+    status: planned
+  agents:
+    pattern: "{clientname}.agents.ajdigital.app"
+    purpose: tenant-specific agent ecosystem workspace
+    status: planned
+rules:
+  - audiojones.com is for public brand, content, and lead generation.
+  - ajdigital.app is for applications, agents, dashboards, APIs, internal tools, and client portals.
+  - Tenant routing must prevent cross-tenant data exposure.
+  - DNS, wildcard, certificate, proxy, and production routing changes require explicit approval.
+
