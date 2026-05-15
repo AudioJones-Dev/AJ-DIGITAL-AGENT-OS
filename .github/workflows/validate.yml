@@ -58,6 +58,5 @@ jobs:
             --no-progress
             --offline
             --include-fragments
-            --base .
             .
           fail: true
