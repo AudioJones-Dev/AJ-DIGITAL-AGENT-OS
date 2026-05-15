@@ -1,6 +1,6 @@
 # Workspace Audit (Archived)
 
-> Archived 2026-05-15. Point-in-time snapshot taken before this folder became a Git repository. Retained for history only — do not treat as current state.
+> Archived 2026-05-15. Point-in-time snapshot taken before this folder became a Git repository. Retained for history only -- do not treat as current state.
 
 Audit timestamp: 2026-05-14 18:12:33 -04:00
 
