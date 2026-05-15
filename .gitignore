@@ -41,5 +41,7 @@ venv/
 # Local automation and generated reports
 .npm-cache/
 *.local.md
-WORKSPACE_AUDIT_*.md
+
+# Audit snapshots are committed under docs/archive/ when they should be retained.
+# Local-only snapshots can use the *.local.md pattern above.
 

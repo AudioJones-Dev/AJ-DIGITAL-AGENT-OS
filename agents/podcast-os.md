@@ -2,12 +2,6 @@
 
 ## Reference
 
-Local product folder:
-
-```txt
-C:\dev\AJ DIGITAL AGENTS\PODCAST OS
-```
-
 Product URL:
 
 ```txt
@@ -17,6 +11,8 @@ podcastos.ajdigital.app
 Status: Active/In Development
 
 Purpose: AI Podcast Producer Agent
+
+Local checkout paths are operator-specific and not part of the shared contract. Example (Windows): `C:\dev\AJ DIGITAL AGENTS\PODCAST OS`.
 
 ## Ownership Boundary
 

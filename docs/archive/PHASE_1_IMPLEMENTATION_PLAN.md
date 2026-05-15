@@ -1,4 +1,6 @@
-# Phase 1 Implementation Plan
+# Phase 1 Implementation Plan (Archived)
+
+> Archived 2026-05-15. Phase 1 work landed in commit `fe681f3`. Live status now lives in `ROADMAP.md` and `CHANGELOG.md`.
 
 ## Purpose
 

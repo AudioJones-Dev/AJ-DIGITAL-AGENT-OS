@@ -16,6 +16,6 @@ This SOP defines how domains and subdomains should be planned for AJ Digital age
 1. Confirm the domain purpose.
 2. Confirm Cloudflare DNS ownership.
 3. Confirm the hosting target.
-4. Record the routing decision in `DOMAIN_TOPOLOGY.md`.
+4. Record the routing decision in [`deployment/domain-architecture.md`](../deployment/domain-architecture.md).
 5. Get approval before DNS, hosting, or certificate changes.
 
