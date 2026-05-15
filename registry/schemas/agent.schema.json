@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ajdigital.app/schemas/agent.schema.json",
+  "title": "Agent Manifest",
+  "description": "Structured manifest for a registered agent under registry/agents/*.yaml.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "agent_id",
+    "name",
+    "status",
+    "purpose",
+    "ownership",
+    "boundaries",
+    "approval_gates",
+    "integrations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "agent_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "active_in_development",
+        "active",
+        "paused",
+        "deprecated"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "local_path": {
+      "type": "string"
+    },
+    "product_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "product_subdomain": { "type": "string" },
+        "tenant_pattern": { "type": "string" }
+      }
+    },
+    "ownership": {
+      "type": "object",
+      "required": ["product_code_owner", "orchestration_owner"],
+      "additionalProperties": false,
+      "properties": {
+        "product_code_owner": { "type": "string", "minLength": 1 },
+        "orchestration_owner": { "type": "string", "minLength": 1 }
+      }
+    },
+    "boundaries": {
+      "type": "object",
+      "required": ["agent_os_may", "agent_os_must_not"],
+      "additionalProperties": false,
+      "properties": {
+        "product_code_location": { "type": "string" },
+        "agent_os_may": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "agent_os_must_not": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        }
+      }
+    },
+    "approval_gates": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "delete",
+          "rename",
+          "move",
+          "overwrite",
+          "install_dependencies",
+          "run_migrations",
+          "push_to_remote",
+          "change_env_variables",
+          "modify_secrets",
+          "modify_active_app_code",
+          "change_deployment_settings"
+        ]
+      }
+    },
+    "integrations": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "planned":  { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "optional": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
