@@ -52,7 +52,7 @@ Human approval is required before:
 
 `ajdigital.app` is the application and agent surface.
 
-Detailed product, API, admin, and tenant routing rules are documented in [DOMAIN_TOPOLOGY.md](DOMAIN_TOPOLOGY.md).
+Detailed product, API, admin, and tenant routing rules are documented in [deployment/domain-architecture.md](deployment/domain-architecture.md).
 
 ## Tool Stack
 

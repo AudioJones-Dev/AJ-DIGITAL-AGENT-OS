@@ -4,7 +4,13 @@ AJ Digital Agent OS is the master orchestration and documentation layer for the 
 
 This repository documents and coordinates agent systems. It does not own product code for individual agents.
 
-## Local Workspace
+## Workspace Layout
+
+`AJ-DIGITAL-AGENT-OS` is the source of truth for cross-agent documentation, schemas, policies, and orchestration prompts.
+
+`PODCAST OS` is a separate, active product workspace for the AI Podcast Producer Agent. Product code remains in that workspace and is referenced here only for registry and orchestration purposes.
+
+Operator-local example layout (Windows checkout):
 
 ```txt
 C:\dev\AJ DIGITAL AGENTS
@@ -12,9 +18,7 @@ C:\dev\AJ DIGITAL AGENTS
 |-- PODCAST OS
 ```
 
-`AJ-DIGITAL-AGENT-OS` is the source of truth for cross-agent documentation, schemas, policies, and orchestration prompts.
-
-`PODCAST OS` is an active product workspace for the AI Podcast Producer Agent. Product code remains in that folder and is referenced here only for registry and orchestration purposes.
+The exact filesystem location is operator-specific and not part of the shared contract.
 
 ## GitHub
 
@@ -27,7 +31,7 @@ Repository:
 - `audiojones.com` is the public brand, media, authority, content, and lead generation surface.
 - `ajdigital.app` is the application surface for agents, dashboards, APIs, internal tools, and client portals.
 
-Product and tenant domains are documented in [DOMAIN_TOPOLOGY.md](DOMAIN_TOPOLOGY.md).
+Product and tenant domains are documented in [deployment/domain-architecture.md](deployment/domain-architecture.md).
 
 ## Operating Rule
 

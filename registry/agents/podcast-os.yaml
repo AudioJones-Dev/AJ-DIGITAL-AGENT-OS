@@ -3,7 +3,6 @@ agent_id: podcast-os
 name: Podcast OS
 status: active_in_development
 purpose: AI Podcast Producer Agent
-local_path: "C:\\dev\\AJ DIGITAL AGENTS\\PODCAST OS"
 product_url: "https://podcastos.ajdigital.app"
 domain:
   product_subdomain: podcastos.ajdigital.app
@@ -12,7 +11,7 @@ ownership:
   product_code_owner: PODCAST OS workspace
   orchestration_owner: AJ Digital Agent OS
 boundaries:
-  product_code_location: "C:\\dev\\AJ DIGITAL AGENTS\\PODCAST OS"
+  product_code_location: PODCAST OS workspace (operator-local checkout; path is operator-specific)
   agent_os_may:
     - reference product folder in registry and documentation
     - document orchestration rules
