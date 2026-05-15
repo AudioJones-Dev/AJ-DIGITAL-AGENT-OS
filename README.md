@@ -4,10 +4,28 @@ AJ Digital Agent OS is the master orchestration and documentation layer for the 
 
 This repository documents and coordinates agent systems. It does not own product code for individual agents.
 
+## Where to Start
+
+Read these in order. They are the entry points for any operator or agent runner working in this repo.
+
+1. [`CLAUDE.md`](CLAUDE.md) - operating contract for Claude (Claude Code, Claude CoWork).
+2. [`AGENTS.md`](AGENTS.md) - runner-agnostic operating contract for Codex, Hermes, OpenClaw, and humans.
+3. [`AGENT_OS_MASTER_SPEC.md`](AGENT_OS_MASTER_SPEC.md) - architecture and layer model.
+4. [`docs/PRD.md`](docs/PRD.md) - what this product is and what "done" looks like for v1.
+5. [`docs/DESIGN.md`](docs/DESIGN.md) - system design, today and target.
+6. [`docs/SECURITY.md`](docs/SECURITY.md) - security and approval policy index (canonical files live in [`permissions/`](permissions)).
+7. [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) - deployment and DNS index (canonical files live in [`deployment/`](deployment)).
+8. [`docs/DECISIONS.md`](docs/DECISIONS.md) - architectural decision log.
+9. [`ROADMAP.md`](ROADMAP.md) and [`CHANGELOG.md`](CHANGELOG.md) - phased plan and dated change log (root, canonical).
+
+The machine-readable source of truth lives in [`registry/`](registry).
+
 ## Local Workspace
 
+The expected operator workspace layout (Windows path shown; adapt for macOS or Linux as needed):
+
 ```txt
-C:\dev\AJ DIGITAL AGENTS
+<workspace-root>/AJ DIGITAL AGENTS
 |-- AJ-DIGITAL-AGENT-OS
 |-- PODCAST OS
 ```
