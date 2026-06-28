@@ -19,6 +19,11 @@ subdomains:
     host: agents.ajdigital.app
     purpose: agent ecosystem dashboard
     status: planned
+  seo:
+    host: seo.ajdigital.app
+    purpose: Google Search Console intelligence, SEO reporting, and alerting
+    status: planned
+    agent_id: gsc-intelligence-service
   api:
     host: api.ajdigital.app
     purpose: API layer
@@ -46,9 +51,12 @@ tenant_patterns:
     pattern: "{clientname}.agents.ajdigital.app"
     purpose: tenant-specific agent ecosystem workspace
     status: planned
+  seo:
+    pattern: "{clientname}.seo.ajdigital.app"
+    purpose: tenant-specific SEO intelligence workspace
+    status: planned
 rules:
   - audiojones.com is for public brand, content, and lead generation.
   - ajdigital.app is for applications, agents, dashboards, APIs, internal tools, and client portals.
   - Tenant routing must prevent cross-tenant data exposure.
   - DNS, wildcard, certificate, proxy, and production routing changes require explicit approval.
-

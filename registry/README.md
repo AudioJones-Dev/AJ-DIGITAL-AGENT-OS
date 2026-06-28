@@ -7,6 +7,7 @@ Markdown files in the repository remain the human-readable policy and operating 
 ## Files
 
 - `agents/podcast-os.yaml`: first active agent record.
+- `agents/gsc-intelligence-service.yaml`: planned Google Search Console intelligence service record.
 - `domains.yaml`: brand, app, product, API, admin, and tenant domain map.
 - `integrations.yaml`: tool and platform integration inventory.
 
@@ -16,4 +17,3 @@ Markdown files in the repository remain the human-readable policy and operating 
 - Do not point to private client data unless the tenant boundary is approved.
 - Keep status values conservative until setup is verified.
 - Update the matching Markdown docs when registry facts change.
-

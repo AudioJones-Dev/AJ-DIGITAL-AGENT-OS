@@ -114,8 +114,33 @@ integrations:
       - production_tracking_changes
       - client_data_capture
       - analytics_key_changes
+  google_oauth:
+    name: Google OAuth
+    status: planned
+    role: Client authorization for Google Search Console property access.
+    approval_required_for:
+      - credential_changes
+      - project_setting_changes
+      - environment_variable_changes
+      - secret_access
+  google_search_console:
+    name: Google Search Console
+    status: planned
+    role: Search analytics, URL inspection, sitemap data, and SEO reporting source.
+    approval_required_for:
+      - credential_access
+      - client_data_capture
+      - data_mutations
+      - environment_variable_changes
+  mcp:
+    name: Model Context Protocol
+    status: planned
+    role: Tool interface for approved agents and clients to query SEO intelligence services.
+    approval_required_for:
+      - privileged_execution
+      - client_data_capture
+      - production_use
 rules:
   - Listing an integration does not make it production-ready.
   - Production integrations require setup verification, owner confirmation, secret placement, and approval gates.
   - Registry files must name required credentials only by variable name, never by value.
-
