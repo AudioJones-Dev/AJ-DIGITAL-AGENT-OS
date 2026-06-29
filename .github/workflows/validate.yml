@@ -1,0 +1,62 @@
+name: Validate Registry & Docs
+
+on:
+  pull_request:
+    paths:
+      - 'registry/**'
+      - '**.md'
+      - '.github/workflows/validate.yml'
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  schema:
+    name: Registry schema validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install check-jsonschema
+        run: pipx install check-jsonschema
+
+      - name: Validate agent manifests
+        run: |
+          check-jsonschema \
+            --schemafile registry/schemas/agent.schema.json \
+            registry/agents/*.yaml
+
+      - name: Validate domains registry
+        run: |
+          check-jsonschema \
+            --schemafile registry/schemas/domains.schema.json \
+            registry/domains.yaml
+
+      - name: Validate integrations registry
+        run: |
+          check-jsonschema \
+            --schemafile registry/schemas/integrations.schema.json \
+            registry/integrations.yaml
+
+  links:
+    name: Markdown link check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --offline
+            --include-fragments
+            .
+          fail: true

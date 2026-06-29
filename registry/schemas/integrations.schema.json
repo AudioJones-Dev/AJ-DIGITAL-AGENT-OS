@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ajdigital.app/schemas/integrations.schema.json",
+  "title": "Integration Registry",
+  "description": "Structured inventory of tool and platform integrations under registry/integrations.yaml.",
+  "type": "object",
+  "required": ["schema_version", "integrations"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "integrations": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "status", "role"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "status": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "planned_optional",
+              "planned_active",
+              "active_planned",
+              "active"
+            ]
+          },
+          "role": { "type": "string", "minLength": 1 },
+          "approval_required_for": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}
