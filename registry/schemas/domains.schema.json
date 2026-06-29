@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ajdigital.app/schemas/domains.schema.json",
+  "title": "Domain Registry",
+  "description": "Structured map of brand, app, product, admin, and tenant domains under registry/domains.yaml.",
+  "type": "object",
+  "required": ["schema_version", "domains"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "domains": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["domain", "purpose", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "domain": { "type": "string", "minLength": 1 },
+          "purpose": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "minLength": 1 },
+          "wildcard_subdomain": { "type": "string" }
+        }
+      }
+    },
+    "subdomains": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["host", "purpose", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "host": { "type": "string", "minLength": 1 },
+          "purpose": { "type": "string", "minLength": 1 },
+          "status": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "active_in_development",
+              "active",
+              "paused",
+              "deprecated"
+            ]
+          },
+          "agent_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          }
+        }
+      }
+    },
+    "tenant_patterns": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["pattern", "purpose", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "pattern": { "type": "string", "minLength": 1 },
+          "purpose": { "type": "string", "minLength": 1 },
+          "status": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "active_in_development",
+              "active",
+              "paused",
+              "deprecated"
+            ]
+          }
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}
